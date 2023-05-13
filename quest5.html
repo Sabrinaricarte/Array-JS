@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Questão 05</title>
+	<meta charset="utf-8">
+	<script>
+		function obterValorMaximo() {
+			var vetor = document.getElementById("entrada").value.split(",").map(Number);
+			var maximo = Math.max.apply(null, vetor);
+			document.getElementById("resultado").innerHTML = "O valor máximo é " + maximo;
+		}
+	</script>
+</head>
+<body>
+	<h1>Valor máximo em um vetor</h1>
+	<label for="entrada">Digite os números do vetor separados por vírgula:</label>
+	<input type="text" id="entrada">
+	<button onclick="obterValorMaximo()">Calcular</button>
+	<div id="resultado"></div>
+</body>
+</html>

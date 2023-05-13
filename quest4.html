@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 04</title>
+</head>
+<body><h1>Estatísticas de um vetor</h1>
+	<button onclick="calcular()">Calcular</button>
+	<p>Soma dos elementos menores que 15: <span id="somaMenores"></span></p>
+	<p>Quantidade de elementos iguais a 15: <span id="qtdIguais"></span></p>
+	<p>Média dos elementos maiores que 15: <span id="mediaMaiores"></span></p>
+<script type="text/javascript">
+function calcular(){
+			var vetor = [];
+			var somaMenores = 0;
+			var qtdIguais = 0;
+			var somaMaiores = 0;
+			var qtdMaiores = 0;
+			var mediaMaiores = 0;
+
+			for(var i=0; i<10; i++){
+				var valor = parseInt(prompt("Informe o valor para a posição " + i));
+				vetor.push(valor);
+			}
+
+			for(var i=0; i<vetor.length; i++){
+				if(vetor[i] < 15){
+					somaMenores += vetor[i];
+				} else if(vetor[i] == 15){
+					qtdIguais++;
+				} else {
+					somaMaiores += vetor[i];
+					qtdMaiores++;
+				}
+			}
+
+			if(qtdMaiores > 0){
+				mediaMaiores = somaMaiores + qtdMaiores/2;
+			}
+
+			document.getElementById("somaMenores").textContent = somaMenores;
+			document.getElementById("qtdIguais").textContent = qtdIguais;
+			document.getElementById("mediaMaiores").textContent = mediaMaiores;
+		}
+
+</script>    
+</body>
+</html>
